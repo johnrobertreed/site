@@ -29,9 +29,9 @@ const SHELVED_Z = -0.1;
 const REVEAL_Z = 0.06;
 const REVEAL_YAW = 0.7;
 const SHELVED_YAW = Math.PI / 2;
-const REVEAL_SCALE = 1.09;
-const NEIGHBOR_SCALE = 0.9;
-const FAR_SCALE = 0.84;
+const REVEAL_SCALE = 1;
+const NEIGHBOR_SCALE = 1;
+const FAR_SCALE = 1;
 const NEIGHBOR_LEAN = 0.1;
 const HOVER_PRELEAN = 0.15;
 const TILT_YAW_MAX = (23 * Math.PI) / 180;
@@ -188,23 +188,26 @@ function buildBook(
 
   const frontArt = new THREE.Mesh(
     new THREE.PlaneGeometry(width * 0.94, height * 0.94),
-    new THREE.MeshStandardMaterial({ map: textures.front, roughness: 0.72 }),
+    new THREE.MeshBasicMaterial({ map: textures.front }),
   );
   frontArt.position.z = thickness / 2 + 0.018;
+  frontArt.userData.coverFace = "front";
 
   const backArt = new THREE.Mesh(
     new THREE.PlaneGeometry(width * 0.94, height * 0.94),
-    new THREE.MeshStandardMaterial({ map: textures.back, roughness: 0.78 }),
+    new THREE.MeshBasicMaterial({ map: textures.back }),
   );
   backArt.position.z = -thickness / 2 - 0.018;
   backArt.rotation.y = Math.PI;
+  backArt.userData.coverFace = "back";
 
   const spineArt = new THREE.Mesh(
     new THREE.PlaneGeometry(thickness * 0.88, height * 0.92),
-    new THREE.MeshStandardMaterial({ map: textures.spine, roughness: 0.76 }),
+    new THREE.MeshBasicMaterial({ map: textures.spine }),
   );
   spineArt.position.x = -width / 2 - 0.018;
   spineArt.rotation.y = -Math.PI / 2;
+  spineArt.userData.coverFace = "spine";
 
   const pick = new THREE.Mesh(
     new THREE.BoxGeometry(width + 0.08, height + 0.08, thickness + 0.12),
@@ -302,9 +305,9 @@ function applyPose(node: BookNode) {
   node.slot.position.x = node.pose.x;
   node.content.position.z = node.pose.z;
   node.content.rotation.y = node.pose.yaw + node.hoverLean;
-  node.content.scale.setScalar(node.pose.scale);
+  node.content.scale.set(1, 1, 1);
   node.blob.position.z = node.pose.z * 0.35;
-  node.blob.scale.setScalar(lerp(0.85, 1.15, node.pose.dim));
+  node.blob.scale.set(1, 1, 1);
   applyDim(node, node.pose.dim);
 }
 
@@ -368,7 +371,7 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
   renderer.setClearColor(0x000000, 0);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.02;
+  renderer.toneMappingExposure = 1.12;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -378,7 +381,7 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
   const lookGoal = new THREE.Vector3(0, 1.28, 0.15);
   const posGoal = new THREE.Vector3(0, 1.42, 6.65);
 
-  const hemi = new THREE.HemisphereLight(0xf2efe8, 0xc8c2b8, 0.42);
+  const hemi = new THREE.HemisphereLight(0xf2efe8, 0xc8c2b8, 0.52);
   const key = new THREE.DirectionalLight(0xfff4e6, 1.55);
   key.position.set(-1.6, 5.6, 4.8);
   key.castShadow = true;
@@ -398,11 +401,24 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
   floor.receiveShadow = true;
   scene.add(floor);
 
+  const plank = new THREE.Mesh(
+    new THREE.BoxGeometry(18, 0.08, 1.35),
+    new THREE.MeshStandardMaterial({
+      color: 0xc4b49a,
+      roughness: 0.82,
+      metalness: 0.02,
+    }),
+  );
+  plank.position.set(0, -0.04, -0.08);
+  plank.receiveShadow = true;
+  plank.castShadow = true;
+  scene.add(plank);
+
   const applyLights = () => {
     const dark = document.documentElement.dataset.theme === "dark";
     hemi.color.set(dark ? 0xb8c0cc : 0xf2efe8);
     hemi.groundColor.set(dark ? 0x1a1a1a : 0xc8c2b8);
-    hemi.intensity = dark ? 0.32 : 0.42;
+    hemi.intensity = dark ? 0.4 : 0.52;
     key.intensity = dark ? 1.25 : 1.55;
     key.color.set(dark ? 0xf0e6d8 : 0xfff4e6);
     fill.intensity = dark ? 0.12 : 0.18;
@@ -437,8 +453,9 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
         if (!photo) return;
         node.idle.traverse((obj) => {
           if (!(obj instanceof THREE.Mesh)) return;
+          if (obj.userData.coverFace !== "front") return;
           const mat = obj.material;
-          if (mat instanceof THREE.MeshStandardMaterial && mat.map === front) {
+          if (mat instanceof THREE.MeshBasicMaterial) {
             mat.map = photo;
             mat.needsUpdate = true;
           }
@@ -551,8 +568,8 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
 
   function inspectTarget(index: number): Pose {
     if (index === presented) {
-      if (mobile()) return { x: 0, z: 1.2, yaw: 0.28, scale: 0.92, dim: 1 };
-      return { x: 0, z: 1.38, yaw: 0.3, scale: 1.02, dim: 1 };
+      if (mobile()) return { x: 0, z: 1.2, yaw: 0.28, scale: 1, dim: 1 };
+      return { x: 0, z: 1.38, yaw: 0.3, scale: 1, dim: 1 };
     }
     const xs = layoutX(nodes, presented);
     return {
@@ -771,7 +788,6 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
   }
 
   const onPointerDown = (event: PointerEvent) => {
-    if (mode !== "browse") return;
     pointerId = event.pointerId;
     dragX = event.clientX;
     dragAbs = 0;
@@ -780,22 +796,30 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
   };
 
   const onPointerMove = (event: PointerEvent) => {
-    if (mode === "inspect") return;
     if (pointerId === event.pointerId) {
       const dx = event.clientX - dragX;
       dragAbs += Math.abs(dx);
-      if (dragAbs > 6) {
-        dragging = true;
-        canvas.classList.add("is-dragging");
-      }
-      if (dragging) {
-        const unit = Math.max(105, canvas.clientWidth * 0.11);
-        if (Math.abs(dx) >= unit * 0.55) {
-          const dir = dx < 0 ? 1 : -1;
-          dragX = event.clientX;
-          void goTo(presented + dir);
+      if (mode === "browse") {
+        if (dragAbs > 6) {
+          dragging = true;
+          canvas.classList.add("is-dragging");
         }
+        if (dragging) {
+          const unit = Math.max(105, canvas.clientWidth * 0.11);
+          if (Math.abs(dx) >= unit * 0.55) {
+            const dir = dx < 0 ? 1 : -1;
+            dragX = event.clientX;
+            void goTo(presented + dir);
+          }
+        }
+      } else if (mode === "inspect" && dragAbs > 6) {
+        dragging = true;
       }
+    }
+    if (mode === "inspect") {
+      const hit = pickAt(event);
+      canvas.style.cursor = hit === presented ? "default" : "pointer";
+      return;
     }
     if (!dragging) {
       hoverIndex = pickAt(event);
@@ -810,6 +834,9 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
     if (mode === "browse" && !dragging && dragAbs < 7) {
       const index = pickAt(event);
       if (index >= 0) void focusBook(index);
+    } else if (mode === "inspect" && !dragging && dragAbs < 7) {
+      const index = pickAt(event);
+      if (index !== presented) void returnToShelf();
     }
     pointerId = null;
     dragging = false;

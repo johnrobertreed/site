@@ -29,7 +29,7 @@ npm start
 
 ## Design credit
 
-Site design inspired by [Ahmed Dahbi](https://dahbiahmed.com/). The layout system, type pairing, career-row pattern, and help overlay are the reference — none of his copy, photos, books, or projects are used.
+Site design heavily inspired by [Ahmed Dahbi](https://dahbiahmed.com/). The layout system, type pairing, career-row pattern, and help overlay are the reference — none of his copy, photos, books, or projects are used.
 
 ## Content notes
 

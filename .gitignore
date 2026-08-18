@@ -10,3 +10,4 @@ debug.log
 *.tsbuildinfo
 
 .env
+.vercel

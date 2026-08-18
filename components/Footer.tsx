@@ -9,7 +9,7 @@ export function Footer() {
         <a href={`mailto:${email}`}>Email</a>
       </div>
       <p className="footer-credit">
-        Site design inspired by{" "}
+        Site design heavily inspired by{" "}
         <a href="https://dahbiahmed.com/">Ahmed Dahbi</a>
       </p>
     </footer>

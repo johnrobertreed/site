@@ -129,7 +129,7 @@ export function toShelfBook(book: Book): ShelfBook {
     accent: visual.accent,
     ink: visual.ink,
     motif: visual.motif,
-    coverImage: `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg?default=false`,
+    coverImage: `/books/${book.isbn}.jpg`,
     coverAspect: visual.coverAspect,
     height: visual.height,
     thickness: visual.thickness,
