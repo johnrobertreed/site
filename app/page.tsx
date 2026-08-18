@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { HelpOverlay } from "@/components/HelpOverlay";
 import { Portrait } from "@/components/Portrait";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { email, helpTopics } from "@/lib/content";
+import { advisoryTopics, email } from "@/lib/content";
 
 export default function HomePage() {
   return (
@@ -56,10 +56,11 @@ export default function HomePage() {
             <p>
               Building a company is easier when you have someone good to think
               with. I advise founders and operators on narrative, go-to-market,
-              and how to show up in a noisy market.
+              and how to show up in a noisy market. I also angel into early-stage
+              projects and funds.
             </p>
             <div className="advisory-list">
-              {helpTopics.map((topic) => (
+              {advisoryTopics.map((topic) => (
                 <div key={topic.id} className="advisory-item">
                   <strong>{topic.label}</strong>
                   <span>{topic.subtitle}</span>

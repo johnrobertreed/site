@@ -99,6 +99,16 @@ export const helpTopics: HelpTopic[] = [
   },
 ];
 
+export const advisoryTopics: HelpTopic[] = [
+  ...helpTopics,
+  {
+    id: "investing",
+    label: "Investing",
+    subtitle:
+      "Angeling into early-stage projects and funds — writing the check, then staying useful after it clears.",
+  },
+];
+
 /** Starter placeholders for the 3D shelf — not a reading list claim. */
 export const books: Book[] = [
   {
