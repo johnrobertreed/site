@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --bg: #fafafa;
+  --text: #1a1a1a;
+  --secondary: #555555;
+  --accent: #c05621;
+  --border: #e0e0e0;
+  --shadow: 0 10px 40px rgba(20, 20, 20, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #141414;
+    --text: #e1e1e1;
+    --secondary: #999999;
+    --accent: #d4764a;
+    --border: #2a2a2a;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@theme inline {
+  --color-page: var(--bg);
+  --color-ink: var(--text);
+  --color-muted: var(--secondary);
+  --color-accent: var(--accent);
+  --color-line: var(--border);
+  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 80;
+  border-radius: 999px;
+  background: var(--bg);
+  padding: 0.4rem 0.85rem;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid var(--border);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+a.plain {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a.plain:hover {
+  color: var(--accent);
+}
+
+a.company {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+a.company:hover {
+  text-decoration-color: var(--accent);
+}
