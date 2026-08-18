@@ -409,11 +409,14 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
   function frameInspect() {
     const w = root.clientWidth;
     const h = root.clientHeight;
+    // Shift the projection so the book is centered in the leftover
+    // space beside (or above) the details panel, not under it.
     if (w > 620) {
       const panel = Math.min(320, w * 0.46);
-      camera.setViewOffset(w, h, 0, 0, w - panel, h);
+      camera.setViewOffset(w, h, panel / 2, 0, w, h);
     } else {
-      camera.setViewOffset(w, h, 0, 0, w, h * 0.64);
+      const sheet = Math.min(h * 0.4, 260);
+      camera.setViewOffset(w, h, 0, sheet / 2, w, h);
     }
     camera.updateProjectionMatrix();
   }
@@ -526,8 +529,8 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
   }
 
   function focusPose(): Pose {
-    if (mobile()) return { x: 0, z: 1.4, yaw: 0, scale: 0.92 };
-    return { x: -0.58, z: 1.66, yaw: 0, scale: 1.08 };
+    if (mobile()) return { x: 0, z: 1.45, yaw: 0, scale: 0.88 };
+    return { x: 0, z: 1.7, yaw: 0, scale: 1.05 };
   }
 
   async function focusBook(index?: number) {
