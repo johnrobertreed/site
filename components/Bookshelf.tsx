@@ -110,7 +110,7 @@ export function Bookshelf() {
             View on Open Library
           </a>
           <p className="shelf-details-hint">
-            drag to orbit · scroll to zoom · esc to close
+            move to tilt · esc to close
           </p>
         </aside>
         <div className="shelf-loading" aria-live="polite">
