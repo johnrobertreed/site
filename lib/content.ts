@@ -12,6 +12,14 @@ export type HelpTopic = {
   subtitle: string;
 };
 
+export type Book = {
+  title: string;
+  author: string;
+  isbn: string;
+  href: string;
+  description: string;
+};
+
 export const career: Role[] = [
   {
     dates: "2018–now",
@@ -88,6 +96,82 @@ export const helpTopics: HelpTopic[] = [
     label: "Branding",
     subtitle:
       "Naming the thing clearly enough that the right people remember it.",
+  },
+];
+
+/** Starter placeholders for the 3D shelf — not a reading list claim. */
+export const books: Book[] = [
+  {
+    title: "Crossing the Chasm",
+    author: "Geoffrey Moore",
+    isbn: "9780060517120",
+    href: "https://openlibrary.org/isbn/9780060517120",
+    description:
+      "How technology products move from early adopters across the gulf to a pragmatic mainstream market.",
+  },
+  {
+    title: "The Hard Thing About Hard Things",
+    author: "Ben Horowitz",
+    isbn: "9780062273208",
+    href: "https://openlibrary.org/isbn/9780062273208",
+    description:
+      "A blunt operating manual for the ugly, un-teachable parts of building and running a company.",
+  },
+  {
+    title: "Influence",
+    author: "Robert Cialdini",
+    isbn: "9780061241895",
+    href: "https://openlibrary.org/isbn/9780061241895",
+    description:
+      "The psychology of persuasion: the principles that make people say yes, and how to see them coming.",
+  },
+  {
+    title: "Zero to One",
+    author: "Peter Thiel",
+    isbn: "9780804139298",
+    href: "https://openlibrary.org/isbn/9780804139298",
+    description:
+      "Notes on startups and monopoly — why creating something new beats competing on a crowded field.",
+  },
+  {
+    title: "Thinking, Fast and Slow",
+    author: "Daniel Kahneman",
+    isbn: "9780374533557",
+    href: "https://openlibrary.org/isbn/9780374533557",
+    description:
+      "Two systems of thought: the fast, intuitive one and the slow, deliberate one, and how they shape judgment.",
+  },
+  {
+    title: "Poor Charlie's Almanack",
+    author: "Charles T. Munger",
+    isbn: "9781578645015",
+    href: "https://openlibrary.org/isbn/9781578645015",
+    description:
+      "Talks and writing on mental models, inversion, and the worldly wisdom Charlie Munger kept returning to.",
+  },
+  {
+    title: "The Psychology of Money",
+    author: "Morgan Housel",
+    isbn: "9780857197689",
+    href: "https://openlibrary.org/isbn/9780857197689",
+    description:
+      "Essays on how people think about money — and why behavior usually beats brilliance.",
+  },
+  {
+    title: "The Sovereign Individual",
+    author: "Davidson & Rees-Mogg",
+    isbn: "9780684832722",
+    href: "https://openlibrary.org/isbn/9780684832722",
+    description:
+      "A late-1990s forecast of how force, information, and the nation-state would unbundle in a digital economy.",
+  },
+  {
+    title: "On Writing Well",
+    author: "William Zinsser",
+    isbn: "9780060891541",
+    href: "https://openlibrary.org/isbn/9780060891541",
+    description:
+      "A craftsman's guide to nonfiction: clarity, simplicity, and the discipline of cutting clutter.",
   },
 ];
 

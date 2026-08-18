@@ -12,9 +12,11 @@
     "node": ">=20"
   },
   "dependencies": {
+    "@types/three": "^0.185.4",
     "next": "16.3.1",
     "react": "19.1.1",
-    "react-dom": "19.1.1"
+    "react-dom": "19.1.1",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",

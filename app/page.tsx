@@ -1,28 +1,28 @@
+import { Accordion, Drawer } from "@/components/Accordion";
+import { Bookshelf } from "@/components/Bookshelf";
 import { Career } from "@/components/Career";
 import { Footer } from "@/components/Footer";
 import { HelpOverlay } from "@/components/HelpOverlay";
-import { SectionLabel } from "@/components/SectionLabel";
-import { helpTopics } from "@/lib/content";
+import { Portrait } from "@/components/Portrait";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { email, helpTopics } from "@/lib/content";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="page">
       <a href="#main" className="skip-link">
         Skip to content
       </a>
 
-      <main
-        id="main"
-        className="mx-auto w-full max-w-[740px] px-6 pb-32 pt-16 sm:pt-24"
-      >
-        <header className="mb-16 sm:mb-20">
-          <h1 className="font-display text-[2.35rem] font-medium leading-[1.15] tracking-tight text-ink sm:text-5xl">
-            John Robert Reed
-          </h1>
-          <p className="mt-3 text-lg text-muted">
-            Partner &amp; CMO at Multicoin Capital
-          </p>
-          <p className="mt-8 max-w-[58ch] text-[17px] leading-[1.7] text-ink">
+      <main id="main">
+        <header>
+          <div className="header-top">
+            <Portrait />
+            <ThemeToggle />
+          </div>
+          <h1>John Robert Reed</h1>
+          <p className="tagline">Partner &amp; CMO at Multicoin Capital</p>
+          <p>
             John Robert (“JR”) is a Partner and leads global marketing and
             communications at Multicoin Capital. He has worked in service of
             venture capital for nearly 20 years and specializes in go-to-market
@@ -31,12 +31,8 @@ export default function HomePage() {
           </p>
         </header>
 
-        <section id="about" aria-labelledby="about-heading" className="mb-20">
-          <SectionLabel>About</SectionLabel>
-          <h2 id="about-heading" className="sr-only">
-            About
-          </h2>
-          <div className="space-y-5 max-w-[58ch] text-[17px] leading-[1.7] text-ink">
+        <Accordion>
+          <Drawer id="about" title="About">
             <p>
               I live in Austin. I studied public relations and business
               foundations at the University of Texas at Austin, then spent a
@@ -50,45 +46,40 @@ export default function HomePage() {
               is go-to-market, narrative, or how a company shows up in the
               world.
             </p>
-          </div>
-        </section>
+          </Drawer>
 
-        <section id="career" aria-labelledby="career-heading" className="mb-20">
-          <SectionLabel>Career</SectionLabel>
-          <h2 id="career-heading" className="sr-only">
-            Career
-          </h2>
-          <Career />
-        </section>
+          <Drawer id="career" title="Career">
+            <Career />
+          </Drawer>
 
-        <section id="advisory" aria-labelledby="advisory-heading">
-          <SectionLabel>Advisory</SectionLabel>
-          <h2 id="advisory-heading" className="sr-only">
-            Advisory
-          </h2>
-          <p className="max-w-[58ch] text-[17px] leading-[1.7] text-ink">
-            Building a company is easier when you have someone good to think
-            with. I advise founders and operators on narrative, go-to-market,
-            and how to show up in a noisy market.
-          </p>
-          <ul className="mt-10 space-y-8">
-            {helpTopics.map((topic) => (
-              <li key={topic.id} className="max-w-[46ch]">
-                <h3 className="text-[1.05rem] font-medium text-ink">
-                  {topic.label}
-                </h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-muted">
-                  {topic.subtitle}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </section>
+          <Drawer id="advisory" title="Advisory">
+            <p>
+              Building a company is easier when you have someone good to think
+              with. I advise founders and operators on narrative, go-to-market,
+              and how to show up in a noisy market.
+            </p>
+            <div className="advisory-list">
+              {helpTopics.map((topic) => (
+                <div key={topic.id} className="advisory-item">
+                  <strong>{topic.label}</strong>
+                  <span>{topic.subtitle}</span>
+                </div>
+              ))}
+            </div>
+            <p className="advisory-cta">
+              Interested? Let&apos;s chat (
+              <a href={`mailto:${email}`}>{email}</a>).
+            </p>
+          </Drawer>
 
+          <Drawer id="bookshelf" title="Bookshelf">
+            <Bookshelf />
+          </Drawer>
+        </Accordion>
+
+        <HelpOverlay />
         <Footer />
       </main>
-
-      <HelpOverlay />
-    </>
+    </div>
   );
 }

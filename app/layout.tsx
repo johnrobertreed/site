@@ -16,7 +16,7 @@ const instrument = Instrument_Sans({
 
 const ibm = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   variable: "--font-ibm",
   display: "swap",
 });
@@ -51,6 +51,8 @@ export const metadata: Metadata = {
   },
 };
 
+const themeBoot = '(function(){try{var stored=localStorage.getItem("theme");var theme=stored||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=theme;}catch(e){document.documentElement.dataset.theme="light";}})();';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,11 +61,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${fraunces.variable} ${instrument.variable} ${ibm.variable}`}
     >
-      <body className="min-h-screen bg-page font-sans text-ink antialiased">
-        {children}
-      </body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBoot }} />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
