@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { email, helpTopics } from "@/lib/content";
+import { helpTopics, twitterDm } from "@/lib/content";
 
 function motionOff() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -22,9 +22,6 @@ export function HelpOverlay() {
 
   const previewId = hoverId ?? activeId;
   const active = helpTopics.find((topic) => topic.id === previewId);
-  const mailto = active
-    ? `mailto:${email}?subject=${encodeURIComponent(active.label)}`
-    : `mailto:${email}`;
 
   useEffect(() => {
     setMounted(true);
@@ -128,7 +125,12 @@ export function HelpOverlay() {
               <p className={`help-subtitle${previewId ? " is-on" : ""}`}>
                 {active?.subtitle ?? ""}
               </p>
-              <a href={mailto} className="help-contact">
+              <a
+                href={twitterDm}
+                className="help-contact"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Contact
               </a>
             </div>

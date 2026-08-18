@@ -1,10 +1,11 @@
-import { email, linkedIn } from "@/lib/content";
+import { email, linkedIn, twitter } from "@/lib/content";
 
 export function Footer() {
   return (
     <footer>
       <div className="footer-links">
         <a href={linkedIn}>LinkedIn</a>
+        <a href={twitter}>X</a>
         <a href={`mailto:${email}`}>Email</a>
       </div>
       <p className="footer-credit">

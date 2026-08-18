@@ -177,3 +177,6 @@ export const books: Book[] = [
 
 export const email = "johnrobertreed@gmail.com";
 export const linkedIn = "https://www.linkedin.com/in/john-robert-reed/";
+export const twitter = "https://x.com/johnrobertreed";
+export const twitterDm =
+  "https://x.com/messages/compose?recipient_id=23902511";
