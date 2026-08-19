@@ -34,17 +34,25 @@ export default function HomePage() {
         <Accordion>
           <Drawer id="about" title="About">
             <p>
-              I live in Austin. I studied public relations and business
-              foundations at the University of Texas at Austin, then spent a
-              decade helping frontier-science and deep-tech companies get to
-              market.
+              I&apos;ve worked inside hundreds of startups over ~20 years,
+              across AI, robotics, SaaS, and crypto. I&apos;ve helped grow
+              businesses from a kernel of an idea to multi-million-dollar
+              acquisitions, and helped grow Multicoin Capital from tens of
+              millions in AUM in 2018 to more than a billion across our hedge
+              fund and venture funds today.
             </p>
             <p>
-              These days I lead marketing and communications at Multicoin
-              Capital, a thesis-driven firm investing in cryptocurrencies,
-              tokens, and blockchain companies. I still advise when the problem
-              is go-to-market, narrative, or how a company shows up in the
-              world.
+              As CMO I lead marketing, communications, and events, including
+              the Multicoin Summit, an invite-only gathering of the
+              industry&apos;s best investors and thought leaders. I also still
+              work closely with our portfolio on go-to-market, crisis comms,
+              PR, and brand strategy.
+            </p>
+            <p>
+              Beyond the firm I invest, read, write, and build for fun. I have
+              deep roots in Austin and try to give back by mentoring at the
+              University of Texas, Techstars, and Capital Factory, advising
+              SXSW, and serving on the board of Friends of the Children Austin.
             </p>
           </Drawer>
 
