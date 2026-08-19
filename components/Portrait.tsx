@@ -13,19 +13,35 @@ const DIRS = [
   "bottom-left",
   "left",
   "top-left",
+  "right-down",
+  "down-right",
+  "down-left",
+  "left-down",
+  "left-up",
+  "up-left",
+  "up-right",
+  "right-up",
 ] as const;
 
 type Dir = (typeof DIRS)[number];
 
 const RING: Dir[] = [
   "right",
+  "right-down",
   "bottom-right",
+  "down-right",
   "bottom",
+  "down-left",
   "bottom-left",
+  "left-down",
   "left",
+  "left-up",
   "top-left",
+  "up-left",
   "top",
+  "up-right",
   "top-right",
+  "right-up",
 ];
 
 function srcFor(dir: Dir) {
@@ -38,7 +54,7 @@ function directionFromPoint(wrap: HTMLElement, x: number, y: number): Dir {
   const dy = y - (rect.top + rect.height / 2);
   if (Math.hypot(dx, dy) < 60) return "center";
   const deg = (Math.atan2(dy, dx) * 180) / Math.PI;
-  const wedge = Math.floor(((deg + 22.5 + 360) % 360) / 45);
+  const wedge = Math.floor(((deg + 11.25 + 360) % 360) / 22.5);
   return RING[wedge] ?? "center";
 }
 
