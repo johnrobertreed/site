@@ -27,10 +27,10 @@ export const career: Role[] = [
     company: "Multicoin Capital",
     href: "https://multicoin.capital/",
     description:
-      "Leads global marketing, communications, and go-to-market. Multicoin is a thesis-driven investment firm that invests in cryptocurrencies, tokens, and blockchain companies across public and private markets.",
+      "Leads global marketing, communications, and events, including the Multicoin Summit. Multicoin is a thesis-driven firm that makes long-term, high-conviction investments in crypto companies and protocols across public and private markets.",
   },
   {
-    dates: "now",
+    dates: "2026–now",
     title: "Board Member",
     company: "Friends of the Children Austin",
     href: "https://friendsaustin.org/",
@@ -38,31 +38,31 @@ export const career: Role[] = [
       "Assists with fundraising, marketing, and strategy to the Austin Chapter of Friends of the Children (Friends Austin). Friends of the Children leverages embedded, long-duration mentoring to stem the advance of systemic poverty for the children most in need.",
   },
   {
-    dates: "now",
-    title: "Co-Chair, Marketing & Communications Working Group",
-    company: "Blockchain Association",
-    href: "https://www.blockchainassociation.org/",
-    description:
-      "Works with the industry trade association on how crypto companies talk to the public and to policymakers.",
-  },
-  {
-    dates: "now",
+    dates: "2018–now",
     title: "Advisory Board Member",
     company: "SXSW",
     href: "https://www.sxsw.com/",
     description:
-      "Advises on the conference's direction. Worked inside SXSW earlier in his career and has stayed close to it since.",
+      "Advises on programming and the direction of the Interactive conference. Worked inside SXSW earlier in his career and has stayed close to it since.",
   },
   {
-    dates: "now",
+    dates: "2025–2026",
+    title: "Co-Chair, Marketing & Communications Working Group",
+    company: "Blockchain Association",
+    href: "https://www.blockchainassociation.org/",
+    description:
+      "Worked with senior members on consensus, partnerships, and how the industry talks to the press.",
+  },
+  {
+    dates: "2018–2023",
     title: "Mentor",
     company: "Techstars",
     href: "https://www.techstars.com/",
     description:
-      "Mentored companies going through the accelerator and was often selected to help them prepare for demo day.",
+      "Mentored companies in the Austin accelerator and was often selected to help them prepare for demo day.",
   },
   {
-    dates: "now",
+    dates: "2018–2023",
     title: "Mentor",
     company: "Capital Factory",
     href: "https://www.capitalfactory.com/",
@@ -70,9 +70,10 @@ export const career: Role[] = [
       "Mentored startups in the program and was often tapped to get them ready for demo day.",
   },
   {
-    dates: "now",
+    dates: "2015–2018",
     title: "Co-founder",
     company: "Whiskey For Water",
+    href: "http://www.whiskeyforwater.org/",
     description:
       "Co-founded with friends. Produced tasting events where whiskey enthusiasts could sample new and rare spirits, with proceeds going to Well Aware. That work helped fund 15 wells for communities in Africa.",
   },
@@ -85,11 +86,24 @@ export const career: Role[] = [
       "Founding-team member at a boutique consultancy that brings emerging technologies to market, focused on frontier science and deep tech.",
   },
   {
+    dates: "2009–2010",
     title: "Booking Coordinator",
     company: "SXSW",
     href: "https://www.sxsw.com/",
     description:
       "Booked influencers, directors, actors, and press for Studio SX during the Film and Interactive conferences.",
+  },
+  {
+    dates: "2008",
+    title: "Festival Coordinator",
+    company: "GamePlan",
+    description:
+      "Coordinated the South Padre Music Festival for a digital agency focused on live, mobile, and online experiences.",
+  },
+  {
+    dates: "2007",
+    title: "Public Relations Intern",
+    company: "TateAustinHahn",
   },
 ];
 
