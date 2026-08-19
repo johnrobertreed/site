@@ -35,7 +35,7 @@ export const career: Role[] = [
     company: "Friends of the Children Austin",
     href: "https://friendsaustin.org/",
     description:
-      "Helps the Austin chapter with fundraising, marketing, and strategy. The chapter pairs kids facing long odds with a paid professional mentor, from as early as age four through high school.",
+      "Assists with fundraising, marketing, and strategy to the Austin Chapter of Friends of the Children (Friends Austin). Friends of the Children leverages embedded, long-duration mentoring to stem the advance of systemic poverty for the children most in need.",
   },
   {
     dates: "now",
