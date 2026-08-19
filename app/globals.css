@@ -701,20 +701,27 @@ ul li::before {
 
 .help-trigger {
   display: block;
-  background: var(--text);
-  color: var(--bg);
-  border: none;
-  border-radius: 8px;
+  width: fit-content;
+  background: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 500;
-  padding: 0.75rem 2rem;
-  margin: 2rem auto 0;
-  transition: opacity 150ms ease;
+  letter-spacing: 0.04em;
+  padding: 0.38rem 1rem;
+  margin: 1.5rem auto 0;
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
 }
 
-.help-trigger:hover,
+.help-trigger:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
 .help-contact:hover {
   opacity: 0.85;
 }
