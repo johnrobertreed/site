@@ -58,17 +58,23 @@ export const career: Role[] = [
     title: "Mentor",
     company: "Techstars",
     href: "https://www.techstars.com/",
+    description:
+      "Mentored companies going through the accelerator and was often selected to help them prepare for demo day.",
   },
   {
     dates: "now",
     title: "Mentor",
     company: "Capital Factory",
     href: "https://www.capitalfactory.com/",
+    description:
+      "Mentored startups in the program and was often tapped to get them ready for demo day.",
   },
   {
     dates: "now",
-    title: "Board Member",
+    title: "Co-founder",
     company: "Whiskey For Water",
+    description:
+      "Co-founded with friends. Produced tasting events where whiskey enthusiasts could sample new and rare spirits, with proceeds going to Well Aware. That work helped fund 15 wells for communities in Africa.",
   },
   {
     dates: "2009–2018",
