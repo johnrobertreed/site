@@ -130,15 +130,15 @@ export const helpTopics: HelpTopic[] = [
 export const advisoryTopics: HelpTopic[] = [...helpTopics];
 
 export const investingThemes = [
-  "Crypto",
-  "Applied AI",
-  "Physical AI",
-  "New energy production",
-  "Materials science",
-  "High-end hospitality",
-  "Technology disruptors of analog industries",
-  "Delightful products",
-];
+  { id: "crypto", label: "Crypto" },
+  { id: "applied-ai", label: "Applied AI" },
+  { id: "physical-ai", label: "Physical AI" },
+  { id: "energy", label: "New energy production" },
+  { id: "materials", label: "Materials science" },
+  { id: "hospitality", label: "High-end hospitality" },
+  { id: "analog", label: "Technology disruptors of analog industries" },
+  { id: "delightful", label: "Delightful products" },
+] as const;
 
 export const books: Book[] = [
   {
