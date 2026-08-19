@@ -140,31 +140,22 @@ export const investingThemes = [
   "Delightful products",
 ];
 
-/** Starter placeholders for the 3D shelf — not a reading list claim. */
 export const books: Book[] = [
   {
-    title: "Crossing the Chasm",
-    author: "Geoffrey Moore",
-    isbn: "9780060517120",
-    href: "https://openlibrary.org/isbn/9780060517120",
+    title: "On Writing",
+    author: "Stephen King",
+    isbn: "9781439156810",
+    href: "https://openlibrary.org/isbn/9781439156810",
     description:
-      "How technology products move from early adopters across the gulf to a pragmatic mainstream market.",
+      "A memoir of the craft: how King learned to write, and the habits that kept him doing it.",
   },
   {
-    title: "The Hard Thing About Hard Things",
-    author: "Ben Horowitz",
-    isbn: "9780062273208",
-    href: "https://openlibrary.org/isbn/9780062273208",
+    title: "All the Pretty Horses",
+    author: "Cormac McCarthy",
+    isbn: "9780679744399",
+    href: "https://openlibrary.org/isbn/9780679744399",
     description:
-      "A blunt operating manual for the ugly, un-teachable parts of building and running a company.",
-  },
-  {
-    title: "Influence",
-    author: "Robert Cialdini",
-    isbn: "9780061241895",
-    href: "https://openlibrary.org/isbn/9780061241895",
-    description:
-      "The psychology of persuasion: the principles that make people say yes, and how to see them coming.",
+      "A young cowboy rides into Mexico and finds the West already gone — and still exacting a price.",
   },
   {
     title: "Zero to One",
@@ -175,44 +166,188 @@ export const books: Book[] = [
       "Notes on startups and monopoly — why creating something new beats competing on a crowded field.",
   },
   {
-    title: "Thinking, Fast and Slow",
-    author: "Daniel Kahneman",
-    isbn: "9780374533557",
-    href: "https://openlibrary.org/isbn/9780374533557",
+    title: "Reflections on the Art of Living",
+    author: "Joseph Campbell (Diane K. Osbon, ed.)",
+    isbn: "9780060926175",
+    href: "https://openlibrary.org/isbn/9780060926175",
     description:
-      "Two systems of thought: the fast, intuitive one and the slow, deliberate one, and how they shape judgment.",
+      "Campbell on myth, vocation, and how to live the life that's actually yours.",
   },
   {
-    title: "Poor Charlie's Almanack",
-    author: "Charles T. Munger",
-    isbn: "9781578645015",
-    href: "https://openlibrary.org/isbn/9781578645015",
+    title: "The Martian",
+    author: "Andy Weir",
+    isbn: "9780553418026",
+    href: "https://openlibrary.org/isbn/9780553418026",
     description:
-      "Talks and writing on mental models, inversion, and the worldly wisdom Charlie Munger kept returning to.",
+      "An astronaut left for dead on Mars treats survival as an engineering problem — and talks himself through it.",
   },
   {
-    title: "The Psychology of Money",
-    author: "Morgan Housel",
-    isbn: "9780857197689",
-    href: "https://openlibrary.org/isbn/9780857197689",
+    title: "Wanting",
+    author: "Luke Burgis",
+    isbn: "9781250262486",
+    href: "https://openlibrary.org/isbn/9781250262486",
     description:
-      "Essays on how people think about money — and why behavior usually beats brilliance.",
+      "Mimetic desire: why we want what other people want, and what that does to markets and lives.",
   },
   {
-    title: "The Sovereign Individual",
-    author: "Davidson & Rees-Mogg",
-    isbn: "9780684832722",
-    href: "https://openlibrary.org/isbn/9780684832722",
+    title: "Breakneck: China's Quest to Engineer the Future",
+    author: "Dan Wang",
+    isbn: "9781324106036",
+    href: "https://openlibrary.org/isbn/9781324106036",
     description:
-      "A late-1990s forecast of how force, information, and the nation-state would unbundle in a digital economy.",
+      "China as an engineering state, America as a lawyerly one — and what each model builds and breaks.",
   },
   {
-    title: "On Writing Well",
-    author: "William Zinsser",
-    isbn: "9780060891541",
-    href: "https://openlibrary.org/isbn/9780060891541",
+    title: "1984",
+    author: "George Orwell",
+    isbn: "9780451524935",
+    href: "https://openlibrary.org/isbn/9780451524935",
     description:
-      "A craftsman's guide to nonfiction: clarity, simplicity, and the discipline of cutting clutter.",
+      "A novel about a state that owns language, memory, and the last private room in a person's head.",
+  },
+  {
+    title: "How Countries Go Broke",
+    author: "Ray Dalio",
+    isbn: "9781501124068",
+    href: "https://openlibrary.org/isbn/9781501124068",
+    description:
+      "Dalio's map of the big debt cycle — how nations load up, roll over, and eventually run out of room.",
+  },
+  {
+    title: "The Technological Republic",
+    author: "Alexander C. Karp & Nicholas W. Zamiska",
+    isbn: "9780593798690",
+    href: "https://openlibrary.org/isbn/9780593798690",
+    description:
+      "A brief against a software industry that stopped building for the state, and a state that stopped asking.",
+  },
+  {
+    title: "The Lessons of History",
+    author: "Will & Ariel Durant",
+    isbn: "9781439149959",
+    href: "https://openlibrary.org/isbn/9781439149959",
+    description:
+      "A slim survey of civilization: what repeats when you look at power, wealth, and belief across centuries.",
+  },
+  {
+    title: "Great Founders Write",
+    author: "Ben Putano",
+    isbn: "9781737676560",
+    href: "https://openlibrary.org/isbn/9781737676560",
+    description:
+      "Why the founders who can think on the page tend to be the ones who can lead.",
+  },
+  {
+    title: "The New Map",
+    author: "Daniel Yergin",
+    isbn: "9780143134428",
+    href: "https://openlibrary.org/isbn/9780143134428",
+    description:
+      "Energy, geopolitics, and the new map of power drawn by oil, gas, climate, and renewables.",
+  },
+  {
+    title: "Angel Investing: Start to Finish",
+    author: "Joe Wallin & Pete Baltaxe",
+    isbn: "9781952120206",
+    href: "https://openlibrary.org/isbn/9781952120206",
+    description:
+      "A practical walk through writing the first checks: terms, diligence, and what early-stage actually looks like.",
+  },
+  {
+    title: "The Art of Being There: Creating Change, One Child at a Time",
+    author: "Duncan Campbell & Craig Borlase",
+    isbn: "9780989341950",
+    href: "https://openlibrary.org/isbn/9780989341950",
+    description:
+      "How long-term, professional mentoring of one child at a time can interrupt a life already written off.",
+  },
+  {
+    title: "The Almanack of Naval Ravikant",
+    author: "Eric Jorgenson",
+    isbn: "9781544514215",
+    href: "https://openlibrary.org/isbn/9781544514215",
+    description:
+      "A compilation of Naval's notes on wealth, judgment, and getting leverage without losing the plot.",
+  },
+  {
+    title: "Homo Deus",
+    author: "Yuval Noah Harari",
+    isbn: "9780062464316",
+    href: "https://openlibrary.org/isbn/9780062464316",
+    description:
+      "A forecast of what happens when humans stop dying of the old things and start worshipping data instead.",
+  },
+  {
+    title: "Outlive",
+    author: "Peter Attia",
+    isbn: "9780593236598",
+    href: "https://openlibrary.org/isbn/9780593236598",
+    description:
+      "A physician's argument that most of what kills us is slow, and most of it is still negotiable.",
+  },
+  {
+    title: "What I Talk About When I Talk About Running",
+    author: "Haruki Murakami",
+    isbn: "9780307389831",
+    href: "https://openlibrary.org/isbn/9780307389831",
+    description:
+      "Murakami on running as the other job: the miles that keep the writing possible.",
+  },
+  {
+    title: "The Power Law",
+    author: "Sebastian Mallaby",
+    isbn: "9780525559993",
+    href: "https://openlibrary.org/isbn/9780525559993",
+    description:
+      "How venture capital actually works — a few bets pay for everything, and the rest is noise.",
+  },
+  {
+    title: "The Uninhabitable Earth: Life After Warming",
+    author: "David Wallace-Wells",
+    isbn: "9780525576709",
+    href: "https://www.amazon.com/dp/0525576703",
+    description:
+      "A climate book that skips the gentle version: what warming does to places, states, and the stories we tell.",
+  },
+  {
+    title: "More Money Than God",
+    author: "Sebastian Mallaby",
+    isbn: "9780143119418",
+    href: "https://openlibrary.org/isbn/9780143119418",
+    description:
+      "The history of hedge funds: how a few people made the market their profession, and what it cost.",
+  },
+  {
+    title: "The Fixer",
+    author: "Bradley Tusk",
+    isbn: "9780525536499",
+    href: "https://openlibrary.org/isbn/9780525536499",
+    description:
+      "A political operator's account of keeping startups alive when incumbents call in the government.",
+  },
+  {
+    title: "High Growth Handbook",
+    author: "Elad Gil",
+    isbn: "9781732265103",
+    href: "https://openlibrary.org/isbn/9781732265103",
+    description:
+      "A playbook for the stretch from twenty people to thousands — boards, execs, and the ugly middle.",
+  },
+  {
+    title: "Debt: The First 5,000 Years",
+    author: "David Graeber",
+    isbn: "9781612194196",
+    href: "https://openlibrary.org/isbn/9781612194196",
+    description:
+      "A history of obligation: credit came before coin, and debt has always been a moral story.",
+  },
+  {
+    title: "Positioning: The Battle for Your Mind",
+    author: "Al Ries & Jack Trout",
+    isbn: "9780071373586",
+    href: "https://openlibrary.org/isbn/9780071373586",
+    description:
+      "The argument that the fight isn't on the shelf — it's for the slot a brand occupies in someone's head.",
   },
 ];
 

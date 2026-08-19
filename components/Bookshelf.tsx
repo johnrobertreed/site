@@ -54,8 +54,8 @@ export function Bookshelf() {
   return (
     <div className="shelf-block">
       <p className="shelf-intro">
-        A starter shelf while the real list gets swapped in. Drag the shelf to
-        browse, click a book to pick it up.
+        Books that stayed on the shelf. Drag to browse, click one to pick it
+        up.
       </p>
 
       <div
@@ -107,7 +107,7 @@ export function Bookshelf() {
             target="_blank"
             rel="noreferrer"
           >
-            View on Open Library
+            View book
           </a>
           <p className="shelf-details-hint">
             move to tilt · esc to close

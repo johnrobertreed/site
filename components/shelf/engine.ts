@@ -24,7 +24,7 @@ type BookNode = {
 
 type Mode = "browse" | "inspect";
 
-const GAP = 0.05;
+const GAP = 0.04;
 const SHELVED_Z = -0.1;
 const REVEAL_Z = 0.06;
 const REVEAL_YAW = 0.7;
@@ -532,7 +532,11 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
     if (dDesc) dDesc.textContent = book.description;
     if (dLink) {
       dLink.href = book.url;
-      dLink.textContent = "View on Open Library";
+      dLink.textContent = book.url.includes("amazon.")
+        ? "View on Amazon"
+        : book.url.includes("openlibrary.org")
+          ? "View on Open Library"
+          : "View book";
     }
     if (details) details.setAttribute("aria-hidden", mode === "browse" ? "true" : "false");
   };
@@ -583,7 +587,7 @@ export async function initBookshelf(root: HTMLElement, books: ShelfBook[]): Prom
 
   function setBrowseCameraGoal() {
     camera.fov = root.clientWidth < 600 ? 33 : root.clientWidth < 920 ? 30 : 27;
-    posGoal.set(0, 1.42, mobile() ? 8.3 : 6.65);
+    posGoal.set(0, 1.42, mobile() ? 8.85 : 7.2);
     lookGoal.set(0, 1.28, 0.12);
   }
 
