@@ -240,8 +240,8 @@ export const books: Book[] = [
   {
     title: "The New Map",
     author: "Daniel Yergin",
-    isbn: "9780143134428",
-    href: "https://openlibrary.org/isbn/9780143134428",
+    isbn: "9780143111153",
+    href: "https://openlibrary.org/isbn/9780143111153",
     description:
       "Energy, geopolitics, and the new map of power drawn by oil, gas, climate, and renewables.",
   },
