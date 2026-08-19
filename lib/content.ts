@@ -31,6 +31,14 @@ export const career: Role[] = [
   },
   {
     dates: "now",
+    title: "Board Member",
+    company: "Friends of the Children Austin",
+    href: "https://friendsaustin.org/",
+    description:
+      "Helps the Austin chapter with fundraising, marketing, and strategy. The chapter pairs kids facing long odds with a paid professional mentor, from as early as age four through high school.",
+  },
+  {
+    dates: "now",
     title: "Co-Chair, Marketing & Communications Working Group",
     company: "Blockchain Association",
     href: "https://www.blockchainassociation.org/",
