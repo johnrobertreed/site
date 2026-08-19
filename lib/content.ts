@@ -127,14 +127,17 @@ export const helpTopics: HelpTopic[] = [
   },
 ];
 
-export const advisoryTopics: HelpTopic[] = [
-  ...helpTopics,
-  {
-    id: "investing",
-    label: "Investing",
-    subtitle:
-      "Angeling into early-stage projects and funds — writing the check, then staying useful after it clears.",
-  },
+export const advisoryTopics: HelpTopic[] = [...helpTopics];
+
+export const investingThemes = [
+  "Crypto",
+  "Applied AI",
+  "Physical AI",
+  "New energy production",
+  "Materials science",
+  "High-end hospitality",
+  "Technology disruptors of analog industries",
+  "Delightful products",
 ];
 
 /** Starter placeholders for the 3D shelf — not a reading list claim. */

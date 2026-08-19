@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { HelpOverlay } from "@/components/HelpOverlay";
 import { Portrait } from "@/components/Portrait";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { advisoryTopics, email } from "@/lib/content";
+import { advisoryTopics, email, investingThemes } from "@/lib/content";
 
 export default function HomePage() {
   return (
@@ -64,8 +64,7 @@ export default function HomePage() {
             <p>
               Building a company is easier when you have someone good to think
               with. I advise founders and operators on narrative, go-to-market,
-              and how to show up in a noisy market. I also angel into early-stage
-              projects and funds.
+              and how to show up in a noisy market.
             </p>
             <div className="advisory-list">
               {advisoryTopics.map((topic) => (
@@ -77,6 +76,25 @@ export default function HomePage() {
             </div>
             <p className="advisory-cta">
               Interested? Let&apos;s chat (
+              <a href={`mailto:${email}`}>{email}</a>).
+            </p>
+          </Drawer>
+
+          <Drawer id="investing" title="Investing">
+            <p>
+              I&apos;m interested in investing in early-stage startups. Check
+              size can range from $25K–$250K.
+            </p>
+            <p>Current themes:</p>
+            <div className="advisory-list">
+              {investingThemes.map((theme) => (
+                <div key={theme} className="advisory-item">
+                  <strong>{theme}</strong>
+                </div>
+              ))}
+            </div>
+            <p className="advisory-cta">
+              If that sounds like you, let&apos;s chat (
               <a href={`mailto:${email}`}>{email}</a>).
             </p>
           </Drawer>

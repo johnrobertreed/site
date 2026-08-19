@@ -11,7 +11,7 @@ import {
 } from "react";
 import { shelfCatalog } from "@/components/shelf/catalog";
 
-const SECTION_IDS = ["about", "career", "advisory", "bookshelf"] as const;
+const SECTION_IDS = ["about", "career", "advisory", "investing", "bookshelf"] as const;
 type SectionId = (typeof SECTION_IDS)[number];
 
 type AccordionValue = {
