@@ -84,7 +84,8 @@ export default function HomePage() {
           <Drawer id="investing" title="Investing">
             <p>
               I&apos;m interested in investing in early-stage startups. Check
-              size can range from $25K–$250K.
+              size can range from $25K–$250K. As an investor, I will help you
+              shape your story and define your marketing program.
             </p>
             <p>Current themes:</p>
             <ThemeGrid />
