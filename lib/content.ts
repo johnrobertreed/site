@@ -79,7 +79,7 @@ export const career: Role[] = [
   },
   {
     dates: "2009–2018",
-    title: "Senior Director, Marketing",
+    title: "Senior Director",
     company: "Jones-Dilworth, Inc.",
     href: "https://www.jones-dilworth.com/",
     description:
