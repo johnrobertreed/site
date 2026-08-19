@@ -55,7 +55,7 @@ export const career: Role[] = [
   },
   {
     dates: "2018–2023",
-    title: "Mentor",
+    title: "Startup Mentor",
     company: "Techstars",
     href: "https://www.techstars.com/",
     description:
@@ -63,7 +63,7 @@ export const career: Role[] = [
   },
   {
     dates: "2018–2023",
-    title: "Mentor",
+    title: "Startup Mentor",
     company: "Capital Factory",
     href: "https://www.capitalfactory.com/",
     description:
