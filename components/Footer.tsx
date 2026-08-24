@@ -1,4 +1,4 @@
-import { email, linkedIn, twitter } from "@/lib/content";
+import { linkedIn, twitter } from "@/lib/content";
 
 export function Footer() {
   return (
@@ -6,8 +6,10 @@ export function Footer() {
       <div className="footer-links">
         <a href={linkedIn}>LinkedIn</a>
         <a href={twitter}>X</a>
-        <a href={`mailto:${email}`}>Email</a>
       </div>
+      <p className="footer-legal">
+        The information contained herein is not an offer to buy or sell any security. The views expressed in speaking engagements are my own and don't necessarily reflect those of my employer. Inclusion of the links to such engagements does not represent an endorsement of me by the sponsors. Speaking engagements and writings are a sample of complete works.
+      </p>
       <p className="footer-credit">
         Site design heavily inspired by{" "}
         <a href="https://dahbiahmed.com/">Ahmed Dahbi</a>
