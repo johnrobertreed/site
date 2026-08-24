@@ -909,6 +909,14 @@ footer {
   gap: 1.25rem;
 }
 
+.footer-legal {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--secondary);
+  line-height: 1.7;
+  max-width: 42rem;
+}
+
 .footer-credit {
   margin: 0;
   font-size: 0.8rem;
